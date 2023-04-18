@@ -12,8 +12,7 @@ public class ModeloDao extends GenericDao<Modelo>{
     for (Modelo mod : lista){
         if (mod.getMarca().equals(marca)){
             modelos.add(mod);
-        }
-        
+        }  
     }
     return modelos;
   }  
