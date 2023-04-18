@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public abstract class GenericDao<T> {
-    private LinkedList<T> lista;
+    protected LinkedList<T> lista;
     
     public void inserir(T obj){
         if(!lista.contains(obj)){
