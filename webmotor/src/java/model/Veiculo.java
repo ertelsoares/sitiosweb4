@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Objects;
+
 
 public class Veiculo {
     private String placa;
@@ -71,6 +73,28 @@ public class Veiculo {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.placa);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Veiculo other = (Veiculo) obj;
+        return Objects.equals(this.placa, other.placa);
     }
     
 }
