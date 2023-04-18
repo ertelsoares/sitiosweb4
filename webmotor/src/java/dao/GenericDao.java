@@ -5,6 +5,7 @@
 package dao;
 
 import java.util.LinkedList;
+import java.util.List;
 
 
 public abstract class GenericDao<T> {
@@ -16,5 +17,13 @@ public abstract class GenericDao<T> {
         }
     }
     
+    public void remover(T obj){
+        lista.remove(obj);
+    }
     
+    public List<T> listar(){
+        LinkedList<T> resp = new LinkedList<>();
+        resp.addAll(lista);
+        return resp;
+    }
 }
