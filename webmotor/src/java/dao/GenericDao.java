@@ -26,4 +26,12 @@ public abstract class GenericDao<T> {
         resp.addAll(lista);
         return resp;
     }
+    
+    public T findByExample(T ex){
+        int pos = lista.indexOf(ex);
+        if(pos >= 0){
+            return lista.get(pos);
+        }
+        return null;
+    }
 }

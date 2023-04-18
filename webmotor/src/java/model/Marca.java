@@ -13,6 +13,11 @@ public class Marca {
     public Marca() {
     }
 
+    public Marca(int id, Marca marca) {
+        this.id = id;
+        this.marca = marca;
+    }
+
     public int getId() {
         return id;
     }

@@ -15,5 +15,14 @@ public class ModeloDao extends GenericDao<Modelo>{
         }  
     }
     return modelos;
-  }  
+  }
+
+   public Modelo findById(int id){
+       for(Modelo m :lista){
+           if(m.getId() == id){
+               return m;
+           }
+       }
+       return null;
+   }  
 }
