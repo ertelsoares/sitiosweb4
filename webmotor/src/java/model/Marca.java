@@ -8,14 +8,16 @@ package model;
 public class Marca {
     private int id;
     private String nome;
-    private Marca marca;
 
-    public Marca(int par, String volkswagen) {
+    public Marca(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
     }
 
-    public Marca(int id, Marca marca) {
-        this.id = id;
-        this.marca = marca;
+    
+
+    
+    public Marca() {
     }
 
     public int getId() {
@@ -34,13 +36,7 @@ public class Marca {
         this.nome = nome;
     }
 
-    public Marca getMarca() {
-        return marca;
-    }
-
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
+ 
 
     @Override
     public int hashCode() {

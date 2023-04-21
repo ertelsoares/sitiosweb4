@@ -12,9 +12,17 @@
             <h2>Busque seu veículo</h2>
             <p:panelGrid columns="2">
                 <p:outputLabel value="Marca:" />
-                <p:selectOneMenu value="#{buscaBean.marcaSelecionada}">
+                <p:selectOneMenu value="#{buscaBean.marcaSelecionada}" 
+                                 converter="#{marcaConverter}">
                     <f:selectItems value="#{aplicacao.itensMarca}" />
                 </p:selectOneMenu>
+                <p:outputLabel value="Modelo:" />
+                <p:selectOneMenu id="cbModelos" value="#{buscaBean.modeloSelecionada}" 
+                                 converter="#{modeloConverter}">
+                    <f:selectItems value="#{aplicacao.itensMarca}" />
+                    <p:ajax event="change" immediate="true" update="cbModelos"/>
+                </p:selectOneMenu>
+             </p:panelGrid>
         </h:form>
     </h:body>
 </html>

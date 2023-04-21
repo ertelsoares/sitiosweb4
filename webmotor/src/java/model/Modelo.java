@@ -5,9 +5,9 @@ package model;
 public class Modelo {
     private int id;
     private String nome;
-    private String marca;
+    private Marca marca;
 
-    public Modelo(int id, String nome, String marca) {
+    public Modelo(int id, String nome, Marca marca) {
         this.id = id;
         this.nome = nome;
         this.marca = marca;
@@ -32,11 +32,11 @@ public class Modelo {
         this.nome = nome;
     }
 
-    public String getMarca() {
+    public Marca getMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
+    public void setMarca(Marca marca) {
         this.marca = marca;
     }
 
