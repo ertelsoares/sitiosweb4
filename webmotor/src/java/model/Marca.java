@@ -10,7 +10,7 @@ public class Marca {
     private String nome;
     private Marca marca;
 
-    public Marca() {
+    public Marca(int par, String volkswagen) {
     }
 
     public Marca(int id, Marca marca) {
