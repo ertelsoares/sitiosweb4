@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
 import javax.faces.model.SelectItem;
 import javax.inject.Named;
 import model.Marca;
@@ -39,5 +40,10 @@ public class AplicacaoBean {
              }
          }
          return itensMarca;
+     }
+     
+     @Produces
+     public MarcaDao getMarcaDao(){
+         return marcaDao;
      }
 }
