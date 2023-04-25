@@ -3,6 +3,7 @@ package beans;
 
 import dao.MarcaDao;
 import dao.ModeloDao;
+import dao.VeiculoDao;
 import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -18,6 +19,7 @@ import model.Modelo;
 public class AplicacaoBean {
     private MarcaDao marcaDao;
     private ModeloDao modeloDao;
+    private VeiculoDao veiculoDao;
     
     private List<SelectItem> itensMarca;
     public AplicacaoBean(){
@@ -34,9 +36,13 @@ public class AplicacaoBean {
         marcaDao.inserir(m);
         modeloDao.inserir(new Modelo(1,"Fusca",m));
         m = new Marca(2,"Ford");
+        
         marcaDao.inserir(m);
         m = new Marca(3,"Fiat");
         marcaDao.inserir(m);
+        
+        
+        veiculoDao = new VeiculoDao();
      }
       
      public List<SelectItem> getItensMarca(){
@@ -54,4 +60,14 @@ public class AplicacaoBean {
      public MarcaDao getMarcaDao(){
          return marcaDao;
      }
+     
+     
+     @Produces
+     public VeiculoDao getVeiculoDao(){
+         return veiculoDao;
+     }
+     
+     
+     
+     
 }
